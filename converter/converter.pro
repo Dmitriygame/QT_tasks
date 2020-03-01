@@ -27,12 +27,16 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     class_converter.cpp \
-    class_fromdec.cpp
+    class_fromdec.cpp \
+    class_frombin.cpp \
+    class_fromhex.cpp
 
 HEADERS += \
         mainwindow.h \
     class_converter.h \
-    class_fromdec.h
+    class_fromdec.h \
+    class_frombin.h \
+    class_fromhex.h
 
 FORMS += \
         mainwindow.ui

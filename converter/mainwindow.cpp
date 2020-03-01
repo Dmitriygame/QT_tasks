@@ -4,7 +4,8 @@
 
 #include "class_converter.h"
 #include "class_fromdec.h"
-
+#include "class_frombin.h"
+#include "class_fromhex.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -36,19 +37,25 @@ void MainWindow::on_pushButton_clicked()
 
 
     if (ui -> f_bin -> isChecked()) {
-
+        Converter *conBIN = new FromBIN;
+        conBIN -> set_num(ui -> f_lineEdit -> text().toInt()); // check input number
+        conBIN -> conversion(t_num_sys);
+        result = conBIN -> getResult();
     }
 
     if (ui -> f_dec -> isChecked()) {
 
-        FromDEC conDEC;
-        conDEC.set_num(ui -> f_lineEdit -> text().toInt()); // check input number
-        conDEC.conversion(t_num_sys);
-        result = conDEC.getResult();
+        Converter *conDEC = new FromDEC;
+        conDEC -> set_num(ui -> f_lineEdit -> text().toInt()); // check input number
+        conDEC -> conversion(t_num_sys);
+        result = conDEC -> getResult();
     }
 
     if (ui -> f_hex -> isChecked()) {
-
+        Converter *conHEX = new FromHEX;
+        conHEX -> set_num(ui -> f_lineEdit -> text().toInt()); // check input number
+        conHEX -> conversion(t_num_sys);
+        result = conHEX -> getResult();
     }
 
     //output

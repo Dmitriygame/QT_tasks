@@ -1,6 +1,11 @@
 #include "class_converter.h"
 
-Converter::Converter() {}
+#include <malloc.h>
+#include <stdio.h>
+
+Converter::Converter() {
+    c_result = (char *)malloc(N * sizeof(char));
+}
 
 Converter::~Converter() {}
 
@@ -51,4 +56,27 @@ char Converter::int_to_char(int remainder) {
         c_remainder = char(remainder + 48);
         return c_remainder;
     }
+}
+
+char* Converter::int_to_char_array(int n) {
+        char* c;
+        c = (char *)malloc(N * sizeof(char));
+        int v = 0; //количество цифр в числе n
+        //разбиваем на отдельные символы число n
+        while (n > 9)
+        {
+            c[v++] = (n % 10) + '0';
+            n = n / 10;
+        }
+        c[v++] = n + '0';
+        c[v] = '\0';
+        char t;
+        //инвертируем массив символов
+        for (int i = 0; i < v / 2; i++)
+        {
+            t = c[i];
+            c[i] = c[v - 1 - i];
+            c[v - 1 - i] = t;
+        }
+        return c;
 }

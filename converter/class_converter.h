@@ -3,6 +3,8 @@
 
 #include <QString>
 
+#define N 15
+
 class Converter {
   public:
     Converter();
@@ -11,8 +13,10 @@ class Converter {
     virtual void conversion(int t_num_sys);
     QString getResult();
     char int_to_char(int remainder);
+    char* int_to_char_array(int value);
   protected:
     int num;
+    char* c_result;
     QString result;
 };
 
