@@ -38,7 +38,12 @@ void MainWindow::on_pushButton_clicked()
 
     if (ui -> f_bin -> isChecked()) {
         Converter *conBIN = new FromBIN;
-        conBIN -> set_num(ui -> f_lineEdit -> text().toInt()); // check input number
+        if (t_num_sys == 16) {
+            conBIN -> set_s_num(ui -> f_lineEdit -> text());
+        }
+        else {
+            conBIN -> set_num(ui -> f_lineEdit -> text().toInt());
+        }
         conBIN -> conversion(t_num_sys);
         result = conBIN -> getResult();
     }
@@ -46,14 +51,20 @@ void MainWindow::on_pushButton_clicked()
     if (ui -> f_dec -> isChecked()) {
 
         Converter *conDEC = new FromDEC;
-        conDEC -> set_num(ui -> f_lineEdit -> text().toInt()); // check input number
+        conDEC -> set_num(ui -> f_lineEdit -> text().toInt());
+        if (t_num_sys == 2) {
+            conDEC -> set_num(ui -> f_lineEdit -> text().toInt());
+        }
+        else if (t_num_sys == 16) {
+            conDEC -> set_s_num(ui -> f_lineEdit -> text());
+        }
         conDEC -> conversion(t_num_sys);
         result = conDEC -> getResult();
     }
 
     if (ui -> f_hex -> isChecked()) {
         Converter *conHEX = new FromHEX;
-        conHEX -> set_num(ui -> f_lineEdit -> text().toInt()); // check input number
+        conHEX -> set_s_num(ui -> f_lineEdit -> text());
         conHEX -> conversion(t_num_sys);
         result = conHEX -> getResult();
     }

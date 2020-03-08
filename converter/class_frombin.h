@@ -2,6 +2,7 @@
 #define CLASS_FROMBIN_H
 
 #include "class_converter.h"
+#include <QString>
 
 class FromBIN : public Converter {
 public:

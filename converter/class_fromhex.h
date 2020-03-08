@@ -8,6 +8,8 @@ public:
     FromHEX();
     ~FromHEX();
     void conversion(int t_num_sys);
+    QString hex_bin(char value);
+    int char_int(char value);
 };
 
 #endif // CLASS_FROMHEX_H

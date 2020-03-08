@@ -61,9 +61,7 @@ char Converter::int_to_char(int remainder) {
 }
 
 char* Converter::int_to_char_array(int n) {
-        char* c;
-        //c = (char *)malloc(N * sizeof(char));
-        c = new char [N];
+        char* c = new char [N];
         int v = 0; //количество цифр в числе n
         //разбиваем на отдельные символы число n
         while (n > 9)
@@ -83,4 +81,8 @@ char* Converter::int_to_char_array(int n) {
         }
         return c;
         delete [] c;
+}
+
+void Converter::set_s_num(QString value) {
+    this -> s_num = value;
 }
