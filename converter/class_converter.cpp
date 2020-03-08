@@ -51,6 +51,7 @@ char Converter::int_to_char(int remainder) {
                 c_remainder = 'F';
                 break;
             }
+            default: {break;}
         }
     }
 
@@ -80,7 +81,6 @@ char* Converter::int_to_char_array(int n) {
             c[v - 1 - i] = t;
         }
         return c;
-        delete [] c;
 }
 
 void Converter::set_s_num(QString value) {
