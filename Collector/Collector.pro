@@ -27,14 +27,12 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     collector.cpp \
-    argumentHandler.cpp \
     copier.cpp \
     pathPreparer.cpp
 
 HEADERS += \
         mainwindow.h \
     collector.h \
-    argumentHandler.h \
     copier.h \
     pathPreparer.h
 

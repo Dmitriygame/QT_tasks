@@ -3,11 +3,11 @@
 #include <QString>
 #include <QProcess>
 
-class Collector
-{
+class Collector {
     public:
         Collector();
         QString bashToQT(QString command);
+        ~Collector();
     private:
 
 };

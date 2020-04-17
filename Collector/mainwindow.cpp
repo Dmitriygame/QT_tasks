@@ -6,7 +6,6 @@
 #include <QString>
 #include <QTextStream>
 
-#include "argumentHandler.h"
 #include "pathPreparer.h"
 #include "collector.h"
 #include "copier.h"
@@ -29,11 +28,7 @@ MainWindow::~MainWindow()
 
 
 void MainWindow::on_buttonCreate_clicked() {
-
-
-
-
-
+    ui -> statusBar -> showMessage("Complete!");
 }
 
 void MainWindow::on_buttonInfo_clicked() {
