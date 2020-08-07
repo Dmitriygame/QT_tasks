@@ -1,5 +1,5 @@
 all: main.o computer.o
-g++ main.o computer.o -o Just_calculator
+  g++ main.o computer.o -o Just_calculator
 
 main.o: main.cpp
   g++ -c main.cpp -o main.o
