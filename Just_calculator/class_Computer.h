@@ -1,14 +1,16 @@
 #pragma once
-#include <string.h>
+#include <iostream>
+#include <stdio.h>
+
 class Computer {
   public:
     Computer();
     ~Computer();
-    void Input();
-    string Calculate();
+    void input();
+    void calculate();
+    float getResult();
 
   private:
-     int a, b;
-     float result;
-     char sign;
+    float a, b, result = 0;
+    char sign;
 };
